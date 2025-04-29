@@ -1,16 +1,45 @@
 import { Container } from './components/Container';
-import { Footer } from './components/Footer';
-import { Heading } from './components/Heading';
+import { CountDown } from './components/CountDown';
+import { DefaultInput } from './components/DefaultInput';
+
+import { Logo } from './components/Logo';
+import { Menu } from './components/Menu';
+
 import './styles/global.css';
 import './styles/theme.css';
+
 export function App() {
   return (
     <>
       <Container>
-        <Heading>Heading</Heading>
+        <Logo />
+      </Container>
+
+      <Container>
+        <Menu />
       </Container>
       <Container>
-        <Footer />
+        <CountDown />
+      </Container>
+
+      <Container>
+        <form className='form' action=''>
+          <div className='formRow'>
+            <DefaultInput
+              id='meuInput'
+              type='text'
+              labelText='texto'
+              placeholder='Digite algo'
+            />
+          </div>
+          <div className='formRow'>
+            <p>Ciclos</p>
+            <p>00</p>
+          </div>
+          <div className='formRow'>
+            <button>Enviar</button>
+          </div>
+        </form>
       </Container>
     </>
   );
