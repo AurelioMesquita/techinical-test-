@@ -1,8 +1,6 @@
 import { Container } from '../../components/Container';
-import { CountDown } from '../../components/CountDown';
 import { Footer } from '../../components/Footer';
 import { Logo } from '../../components/Logo';
-import { MainForm } from '../../components/mainForm';
 import { Menu } from '../../components/Menu';
 
 type MainTemplateProps = {
