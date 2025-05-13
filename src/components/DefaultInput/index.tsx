@@ -10,6 +10,7 @@ export function DefaultInput({
   type,
   placeholder,
   labelText,
+  ...rest
 }: DefaultInputProps) {
   return (
     <>
@@ -19,6 +20,7 @@ export function DefaultInput({
         id={id}
         type={type}
         placeholder={placeholder}
+        {...rest}
       ></input>
     </>
   );
