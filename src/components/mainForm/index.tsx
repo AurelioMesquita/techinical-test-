@@ -23,6 +23,7 @@ export function MainForm() {
 
     if (!taskName) {
       alert('nao tem');
+      return;
     }
 
     const newTask: TaskModel = {
@@ -61,9 +62,12 @@ export function MainForm() {
           ref={taskNameInput}
         />
       </div>
-      <div className='formRow'>
-        <Cycles />
-      </div>
+
+      {state.currentCycle > 0 && (
+        <div className='formRow'>
+          <Cycles />
+        </div>
+      )}
       <div className='formRow'>
         <DefaultButton icon={<PlayCircleIcon />} />
       </div>
