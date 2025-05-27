@@ -22,7 +22,6 @@ export function Cycles() {
       <div className={style.cycleDots}>
         {cycleSteps.map((__, index) => {
           const type = getNextCycleType(getNextCycle(index));
-          console.log(type);
           return (
             <span
               key={`${type}`}
