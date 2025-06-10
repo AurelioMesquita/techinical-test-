@@ -9,6 +9,7 @@ import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleType';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 import { Tips } from '../Tips';
+import { showMessage } from '../../adapters/showMessage';
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
@@ -19,12 +20,13 @@ export function MainForm() {
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    showMessage.dismiss();
 
     if (taskNameInput.current === null) return;
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      alert('nao tem');
+      showMessage.error('Nenhuma task criada.');
       return;
     }
 
@@ -39,9 +41,12 @@ export function MainForm() {
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+
+    showMessage.sucess('Tarefa criada.');
   }
 
   function handleInterruptTask(e: React.MouseEvent<HTMLButtonElement>) {
+    showMessage.error('Tarefa finalizada.');
     e.preventDefault();
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
   }
