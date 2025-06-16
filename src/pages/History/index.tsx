@@ -27,12 +27,13 @@ export function HistoryPage() {
       </Container>
 
       <Container>
-        <div className='responsiveTable'>
+        <div className={styles.responsiveTable}>
           <table>
             <thead>
               <tr>
                 <td>Tarefa</td>
                 <td>Duração</td>
+                <td>Data</td>
                 <td>Status</td>
                 <td>Tipo</td>
               </tr>
@@ -41,10 +42,11 @@ export function HistoryPage() {
               return (
                 <>
                   <tbody>
-                    <tr>
+                    <tr key={task.id}>
                       <td>{task.name}</td>
                       <td>{task.duration}min</td>
                       <td>{status(task.completeDate)}</td>
+                      <td>{formatedDate(task.startDate)}</td>
                       <td>{task.type}</td>
                     </tr>
                   </tbody>
