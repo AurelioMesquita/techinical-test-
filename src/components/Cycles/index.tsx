@@ -1,4 +1,5 @@
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
+import { cycleDescriptionMap } from '../../enum/cycleDescriptionEnum';
 import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleType';
 import style from './styles.module.css';
@@ -8,12 +9,6 @@ export function Cycles() {
 
   const cycleSteps = Array.from({ length: state.currentCycle });
   console.log(cycleSteps);
-
-  const cycleDescriptionMap = {
-    workTime: 'trabalho',
-    shortBreakTime: 'descanso curto',
-    longBreakTime: 'descanso longo',
-  };
 
   return (
     <div className={style.cycles}>
