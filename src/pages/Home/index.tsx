@@ -11,7 +11,7 @@ export function Home() {
   return (
     <MainTemplate>
       <Container>
-        <CountDown fomattedSecondsRemaining='01' />
+        <CountDown />
       </Container>
 
       <Container>
