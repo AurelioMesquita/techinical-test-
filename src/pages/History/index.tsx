@@ -14,6 +14,9 @@ import { status } from '../../utils/Status';
 import { formatedDate } from '../../utils/formatDate';
 
 export function HistoryPage() {
+  useEffect(() => {
+    document.title = 'Histórico';
+  }, []);
   const { state, dispatch } = useTaskContext();
   const [confirmClearHistory, setConfirmClearHistory] = useState(false);
   const hasTasks = state.tasks.length > 0;

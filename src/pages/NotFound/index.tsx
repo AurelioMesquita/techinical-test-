@@ -3,8 +3,12 @@ import { GenericHtml } from '../../components/GenericHtml';
 import { MainTemplate } from '../../templates/MainTemplate';
 import { RouterLink } from '../../components/RouterLink';
 import { Heading } from '../../components/Heading';
+import { useEffect } from 'react';
 
 export function NotFound() {
+  useEffect(() => {
+    document.title = 'Página não encontrada';
+  }, []);
   return (
     <MainTemplate>
       <Container>
